@@ -46,10 +46,16 @@
   @include parallax("Chickens.png")
 }
 
+.fencesJumbo {
+  @extend .aboutJumbo;
+  @include backgroundImage("Fence.JPG");
+}
+
 .porkJumbo {
   @extend .aboutJumbo;
   @include backgroundImage("pork.JPG")
 }
+
 /*Containers*/
 .container {
   min-height: 300px;
