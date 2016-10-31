@@ -1,0 +1,153 @@
+@import "../modules/base";
+
+/*Jumbotrons*/
+.jumbo {
+  height: 550px;
+  @include parallax("Dad_in_truck.JPG")
+}
+
+.aboutJumbo {
+  height: 550px;
+  @include backgroundImage("Tomato%20plants1.jpg")
+}
+
+.larryJumbotron{
+  @include backgroundImage("larryBarn1.jpg");
+  height: 750px;
+  li{
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  aside{
+    border: 3px solid black;
+    height: 500px;
+    width: 250px;
+    top: 17%;
+    left: 6.5%;
+    position: relative;
+    color: $darkRed;
+    background-color: white;
+    text-align: center;
+    box-shadow: 1px 2px 5px black;
+    line-height: 1em;
+    z-index: 0;
+  }
+}
+
+.ourMenuJumbo {
+  height: 750px;
+  @include backgroundImage("OurMenu.JPG");
+}
+
+.chickensJumbo {
+  height: 450px;
+  @include parallax("Chickens.png")
+}
+
+.porkJumbo {
+  @extend .aboutJumbo;
+  @include backgroundImage("pork.JPG")
+}
+/*Containers*/
+.container {
+  min-height: 300px;
+  text-align: left;
+  width: 80%;
+  padding: 5% 10%;
+  background-color: #ffffff;
+}
+
+.container-slim{
+  @extend .container;
+  min-height: 200px;
+}
+
+.container-grey{
+  @extend .container;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+}
+
+.container-grey-slim{
+  @extend .container-grey;
+  min-height: 200px;
+}
+
+.container-full {
+  @extend .container;
+  width: 100%;
+  padding: 5% 0;
+  height: initial;
+}
+
+
+/*Columns*/
+.row{
+  @include row();
+}
+
+.col-2 {
+  @include col(1,4);
+  ul {
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      color: $whiteText;
+    li {
+      list-style-type: none;
+      padding: 15px 0px;
+      margin: 8% 0;
+      border: 1px solid $darkRed;
+      @include border-radius(6px);
+      background-color: $lightRed;
+      &:hover {
+        @include shadow(0px, 10px, 18px, 0px, #bcbcbc);
+      }
+      }
+    }
+  }
+}
+
+.col-3 {
+  @include col(1,3);
+  img {
+    border: .25px solid #bcbcbc;
+    @include border-radius(5px);
+    @include shadow(0px, 6px, 10px, 0px, #bcbcbc);
+    padding: 3px;
+
+  }
+}
+
+
+.col-5 {
+  @include col(1,4);
+  padding: 0 3%;
+  min-height: 400px;
+  margin: 1% 4%;
+  border: 2px solid $darkRed;
+  @include border-radius(6px);
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.produceTile {
+  @extend .col-5;
+  @include shadow(0px, 10px, 18px, 0px, #bcbcbc);
+}
+
+.col-6 {
+  @include col(2, 4, $align:middle);
+}
+
+.col-7 {
+  @include col(2,3);
+}

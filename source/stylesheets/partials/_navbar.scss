@@ -1,0 +1,30 @@
+@import "../modules/base";
+
+
+
+nav {
+  @include gradient(top, left, $lightRed, $darkRed);
+  height: 60px;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  ul {
+    float:left;
+    list-style-type: none;
+    li {
+      float: left;
+      margin: 0px 10px;
+      color: $whiteText;
+      font-size: 20px;
+      a {
+        text-decoration: none;
+        color: $whiteText;
+      }
+    }
+    .right {
+      right: 0;
+      position: absolute;
+    }
+  }
+}

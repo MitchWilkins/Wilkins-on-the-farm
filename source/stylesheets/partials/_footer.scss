@@ -1,0 +1,7 @@
+@import "../modules/base";
+
+footer {
+  @include gradient(bottom, left, $darkRed, $lightRed);
+  padding: (75px / 2) 15px;
+  color: $whiteText;
+}

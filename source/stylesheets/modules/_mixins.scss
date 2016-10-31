@@ -1,0 +1,58 @@
+/*Gradient*/
+@mixin gradient($position, $direction, $color1, $color2) {
+  height: auto;
+  background: $color1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($position $direction, $color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($position $direction, $color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($position $direction, $color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to $position $direction, $color1, $color2); /* Standard syntax (must be last) */
+}
+
+/*Background Images*/
+@mixin parallax($imageName) {
+  background-image: url("../../images/" + $imageName);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin backgroundImage($imageName) {
+  background-image: url("../../images/" + $imageName);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Columns and Row*/
+@mixin row() {
+  font-size: 0;
+}
+
+@mixin col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+  width: 100%;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+
+  @media only screen and (min-width: 768px) {
+    width: percentage($col/$sum);
+    vertical-align: $align;
+  }
+}
+
+/*Borders and shadows*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin shadow($horizontal, $vert, $blur, $offset, $color) {
+  -moz-box-shadow: $horizontal $vert $blur $offset $color;
+  -webkit-box-shadow: $horizontal $vert $blur $offset $color;
+  box-shadow: $horizontal $vert $blur $offset $color;
+}
